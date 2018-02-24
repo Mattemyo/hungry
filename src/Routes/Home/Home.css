@@ -83,7 +83,18 @@ div.title {
   text-align: center;
   text-decoration: underline;
 }
-
+div.ingredient-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  padding-right: 10%;
+}
+div.ingredient-buttons button {
+  margin: 20px;
+  padding: 10px;
+}
+/* =========  Results =========== */
 div.results {
   width: 80%;
   margin: 0 auto;

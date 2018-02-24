@@ -2,7 +2,7 @@ import React from 'react';
 
 const Recipes = ({ recipes }) => {
   const displayedRecipes = recipes.map(recipe => {
-    return <div>recipe</div>;
+    return <div key={Math.random()}>recipe</div>;
   });
 
   return (
@@ -11,6 +11,7 @@ const Recipes = ({ recipes }) => {
         <h2>Recipes</h2>
       </div>
       <div className="results">{displayedRecipes}</div>
+    
     </div>
   );
 };

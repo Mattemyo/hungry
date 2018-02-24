@@ -14,6 +14,10 @@ const SearchTerms = ({ terms, removeFromSearchTerms, getRecipes }) => {
         <h2>Ingredients</h2>
       </div>
       <div className="search-terms">{displayedTerms}</div>
+      <div className="ingredient-buttons">
+        <button>Clear All</button>
+        <button>Search &#128269;</button>
+      </div>
     </div>
   );
 };
