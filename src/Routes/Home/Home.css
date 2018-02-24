@@ -12,8 +12,17 @@ button {
   font-size: 20px;
   padding: 5px;
   outline: 0;
+  border: none;
+  box-shadow: 2px 0px 2px 2px rgba(0, 0, 0, 0.055);
+  background: hsl(6, 50%, 75%);
 }
 input {
+  border-radius: 4px 0 0 4px;
+}
+button {
+  border-radius: 4px 0 0 4px;
+  border-radius: 0 2px 2px 0;
+  cursor: pointer;
 }
 
 /* ============= SearchTerms ============ */
@@ -21,46 +30,51 @@ h2 {
   text-align: center;
 }
 div.search-terms {
-  border: 2px solid black;
+  background: hsl(42, 90%, 67%);
   min-height: 60px;
   max-width: 80%;
   z-index: 60;
-  background: blue;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   margin: 0 auto;
+  padding: 10px;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.466);
+  border-radius: 0 15px;
 }
 
 div.term {
-  border: 2px solid black;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.39);
   border-radius: 25px;
-  background: blue;
-  flex: 1;
-  padding: 2px;
+  background: hsl(42, 90%, 62%);
+  padding-bottom: 5px;
+  padding-left: 5px;
   margin: 5px;
   text-align: center;
   font-size: 20px;
-  min-width: 150px;
+  min-width: 90px;
   height: 25px;
+  flex-grow: 1;
+}
+div.term p {
+  margin: 0;
 }
 div.term span {
+  background: hsl(42, 90%, 62%);
   float: right;
-  border: 2px solid white;
+  border: 2px solid hsl(42, 90%, 67%);
   border-radius: 100%;
   text-align: center;
-  height: 23px;
+  line-height: 23px;
   width: 23px;
-  vertical-align: top;
-  position: relative;
-  top:-1px;
+  vertical-align: text-top;
+  padding-bottom: 2px;
 }
 div.term:hover {
-  background: lightblue;
+  background: hsla(42, 90%, 62%, 0.411);
 }
 
 div.term span:hover {
-  background: darkblue;
+  background: hsla(42, 90%, 20%, 0.89);
   cursor: pointer;
 }
 
@@ -68,4 +82,13 @@ div.title {
   width: 100%;
   text-align: center;
   text-decoration: underline;
+}
+
+div.results {
+  width: 80%;
+  margin: 0 auto;
+  background: hsl(42, 90%, 67%);
+  padding: 10px;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.466);
+  border-radius: 0 15px;
 }

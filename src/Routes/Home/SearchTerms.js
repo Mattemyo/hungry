@@ -3,10 +3,9 @@ import React from 'react';
 const SearchTerms = ({ terms, removeFromSearchTerms, getRecipes }) => {
   const displayedTerms = terms.map(term => (
     <div className="term" key={Math.random()}>
-      <div>
-        {term}
-        <span onClick={() => removeFromSearchTerms(term)}>{'   '}x</span>
-      </div>
+      <p>
+        {term} <span onClick={() => removeFromSearchTerms(term)}>{'   '}x</span>
+      </p>
     </div>
   ));
   return (

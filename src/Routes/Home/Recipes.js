@@ -7,8 +7,10 @@ const Recipes = ({ recipes }) => {
 
   return (
     <div className="recipes">
-      <h3>Recipes</h3>
-      <div>{displayedRecipes}</div>
+      <div className="title">
+        <h2>Recipes</h2>
+      </div>
+      <div className="results">{displayedRecipes}</div>
     </div>
   );
 };

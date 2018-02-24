@@ -10,7 +10,7 @@ class Home extends Component {
     this.state = {
       searchBoxInput: '',
       searchTerms: [],
-      recipes: []
+      recipes: ['chocolate']
     };
   }
 
@@ -22,6 +22,8 @@ class Home extends Component {
     const inputValue = this.state.searchBoxInput;
     const regex = /^[a-zA-Z]+$/;
     if (!inputValue || !regex.test(inputValue)) {
+      this.setState({ searchBoxInput: '' });
+      console.log('oops!');
       return false;
     }
     const arr = this.state.searchTerms;
@@ -54,7 +56,7 @@ class Home extends Component {
           removeFromSearchTerms={this.removeFromSearchTerms}
           getRecipes={this.getRecipes}
         />
-        <Recipes recipes={this.recipes} />
+        <Recipes recipes={this.state.recipes} />
       </div>
     );
   }
