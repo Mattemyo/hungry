@@ -1,10 +1,18 @@
 import React from 'react';
 
-const SearchBar = ({ onInputChange }) => {
+const SearchBar = ({ onInputChange, addToSearchTerms, inputValue }) => {
   return (
-    <div className="searchBar">
-      <input type="text" onChange={onInputChange} />
-      <button onClick={onInputChange}>Add</button>
+    <div className="search-bar">
+      <div>
+        <input
+          value={inputValue}
+          placeholder="Pasta..."
+          type="text"
+          onChange={onInputChange}
+          maxLength="15"
+        />
+        <button onClick={addToSearchTerms}>Add Ingredient</button>
+      </div>
     </div>
   );
 };

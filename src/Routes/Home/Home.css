@@ -1,0 +1,55 @@
+/* ============= SearchBar ========= */
+div.search-bar {
+  background: #ff8c7f;
+  display: flex;
+}
+div.search-bar > div {
+  margin: 20px auto;
+}
+
+input,
+button {
+  font-size: 20px;
+  padding: 5px;
+  outline: 0;
+}
+input {
+  
+}
+
+/* ============= SearchTerms ============ */
+h2 {
+  text-align: center;
+}
+div.search-terms {
+  border: 2px solid black;
+  min-height: 60px;
+  width: 50%;
+  z-index: 60;
+  background: blue;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+div.term {
+  border: 2px solid black;
+  border-radius: 25px;
+  background: blue;
+  flex: 1;
+  padding: 5px;
+  margin: 10px;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 20px;
+  line-height: 2;
+  min-width: 60px;
+  
+}
+
+div.title {
+  width: 50%;
+  text-align: center;
+  text-decoration: underline;
+}
