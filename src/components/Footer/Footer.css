@@ -1,0 +1,8 @@
+footer {
+  z-index: 200;
+  background: blue;
+  margin-top: -20px;
+  bottom: 0;
+  width: 100%;
+  min-height: 90px;
+}
