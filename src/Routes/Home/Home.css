@@ -14,7 +14,6 @@ button {
   outline: 0;
 }
 input {
-  
 }
 
 /* ============= SearchTerms ============ */
@@ -24,12 +23,13 @@ h2 {
 div.search-terms {
   border: 2px solid black;
   min-height: 60px;
-  width: 50%;
+  max-width: 80%;
   z-index: 60;
   background: blue;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin: 0 auto;
 }
 
 div.term {
@@ -37,19 +37,35 @@ div.term {
   border-radius: 25px;
   background: blue;
   flex: 1;
-  padding: 5px;
-  margin: 10px;
-  display: inline-block;
-  vertical-align: middle;
+  padding: 2px;
+  margin: 5px;
   text-align: center;
   font-size: 20px;
-  line-height: 2;
-  min-width: 60px;
-  
+  min-width: 150px;
+  height: 25px;
+}
+div.term span {
+  float: right;
+  border: 2px solid white;
+  border-radius: 100%;
+  text-align: center;
+  height: 23px;
+  width: 23px;
+  vertical-align: top;
+  position: relative;
+  top:-1px;
+}
+div.term:hover {
+  background: lightblue;
+}
+
+div.term span:hover {
+  background: darkblue;
+  cursor: pointer;
 }
 
 div.title {
-  width: 50%;
+  width: 100%;
   text-align: center;
   text-decoration: underline;
 }

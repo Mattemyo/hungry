@@ -1,9 +1,12 @@
 import React from 'react';
 
-const SearchTerms = ({ terms }) => {
+const SearchTerms = ({ terms, removeFromSearchTerms, getRecipes }) => {
   const displayedTerms = terms.map(term => (
     <div className="term" key={Math.random()}>
-      <div>{term}</div>
+      <div>
+        {term}
+        <span onClick={() => removeFromSearchTerms(term)}>{'   '}x</span>
+      </div>
     </div>
   ));
   return (

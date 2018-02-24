@@ -2,13 +2,15 @@
 import React, { Component } from 'react';
 import SearchTerms from './SearchTerms';
 import SearchBar from './SearchBar';
+import Recipes from './Recipes';
 import './Home.css';
 class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
       searchBoxInput: '',
-      searchTerms: []
+      searchTerms: [],
+      recipes: []
     };
   }
 
@@ -26,12 +28,18 @@ class Home extends Component {
     arr.push(inputValue);
     this.setState({ searchTerms: arr, searchBoxInput: '' });
   };
-
+  removeFromSearchTerms = term => {
+    this.setState({
+      searchTerms: this.state.searchTerms.filter(el => el !== term)
+    });
+  };
   _handleKeyPress = e => {
     if (e.key === 'Enter') {
       this.addToSearchTerms();
     }
   };
+
+  getRecipes = () => {};
 
   render() {
     return (
@@ -41,7 +49,12 @@ class Home extends Component {
           addToSearchTerms={this.addToSearchTerms}
           inputValue={this.state.searchBoxInput}
         />
-        <SearchTerms terms={this.state.searchTerms} />
+        <SearchTerms
+          terms={this.state.searchTerms}
+          removeFromSearchTerms={this.removeFromSearchTerms}
+          getRecipes={this.getRecipes}
+        />
+        <Recipes recipes={this.recipes} />
       </div>
     );
   }
