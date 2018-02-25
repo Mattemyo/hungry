@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SearchBar = ({ onInputChange, addToSearchTerms, inputValue }) => {
+const SearchBar = ({ onInputChange, addSearchTerm, inputValue }) => {
   return (
     <div className="search-bar">
       <div>
@@ -11,7 +11,7 @@ const SearchBar = ({ onInputChange, addToSearchTerms, inputValue }) => {
           onChange={onInputChange}
           maxLength="15"
         />
-        <button onClick={addToSearchTerms}>Add Ingredient</button>
+        <button onClick={addSearchTerm}>Add Ingredient</button>
       </div>
     </div>
   );

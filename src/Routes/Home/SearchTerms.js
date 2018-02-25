@@ -1,10 +1,15 @@
 import React from 'react';
 
-const SearchTerms = ({ terms, removeFromSearchTerms, getRecipes }) => {
+const SearchTerms = ({
+  terms,
+  removeSearchTerm,
+  removeAllSearchTerms,
+  getRecipes
+}) => {
   const displayedTerms = terms.map(term => (
     <div className="term" key={Math.random()}>
       <p>
-        {term} <span onClick={() => removeFromSearchTerms(term)}>{'   '}x</span>
+        {term} <button onClick={() => removeSearchTerm(term)}>{'   '}x</button>
       </p>
     </div>
   ));
@@ -15,8 +20,13 @@ const SearchTerms = ({ terms, removeFromSearchTerms, getRecipes }) => {
       </div>
       <div className="search-terms">{displayedTerms}</div>
       <div className="ingredient-buttons">
-        <button>Clear All</button>
-        <button>Search &#128269;</button>
+        <button onClick={removeAllSearchTerms}>Clear All</button>
+        <button onClick={getRecipes}>
+          Search{' '}
+          <span role="img" aria-label="search">
+            &#128269;
+          </span>
+        </button>
       </div>
     </div>
   );

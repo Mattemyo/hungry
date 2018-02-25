@@ -1,16 +1,20 @@
-// @flow
 import React, { Component } from 'react';
+import axios from 'axios';
 import SearchTerms from './SearchTerms';
 import SearchBar from './SearchBar';
 import Recipes from './Recipes';
 import './Home.css';
+
+const apiKey = 'a4c96a92aa69348f8ced3c9141f42517';
+const apiAppId = 'db2831de';
+
 class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
       searchBoxInput: '',
       searchTerms: [],
-      recipes: ['chocolate']
+      hits: []
     };
   }
 
@@ -18,7 +22,7 @@ class Home extends Component {
     this.setState({ searchBoxInput: e.target.value });
   };
 
-  addToSearchTerms = () => {
+  addSearchTerm = () => {
     const inputValue = this.state.searchBoxInput;
     const regex = /^[a-zA-Z]+$/;
     if (!inputValue || !regex.test(inputValue)) {
@@ -30,33 +34,46 @@ class Home extends Component {
     arr.push(inputValue);
     this.setState({ searchTerms: arr, searchBoxInput: '' });
   };
-  removeFromSearchTerms = term => {
+  removeSearchTerm = term => {
     this.setState({
       searchTerms: this.state.searchTerms.filter(el => el !== term)
     });
   };
+  removeAllSearchTerms = () => {
+    this.setState({ searchTerms: [] });
+  };
   _handleKeyPress = e => {
     if (e.key === 'Enter') {
-      this.addToSearchTerms();
+      this.addSearchTerm();
     }
   };
 
-  getRecipes = () => {};
+  getRecipes = () => {
+    axios
+      .get(
+        `https://api.edamam.com/search?q=chicken&app_id=${apiAppId}&app_key=${apiKey}`
+      )
+      .then((response: {}) => {
+        console.log(response.data.hits);
+        this.setState({ hits: response.data.hits });
+      });
+  };
 
   render() {
     return (
       <div onKeyPress={this._handleKeyPress} className="page">
         <SearchBar
           onInputChange={this.onInputChange}
-          addToSearchTerms={this.addToSearchTerms}
+          addSearchTerm={this.addSearchTerm}
           inputValue={this.state.searchBoxInput}
         />
         <SearchTerms
           terms={this.state.searchTerms}
-          removeFromSearchTerms={this.removeFromSearchTerms}
+          removeSearchTerm={this.removeSearchTerm}
           getRecipes={this.getRecipes}
+          removeAllSearchTerms={this.removeAllSearchTerms}
         />
-        <Recipes recipes={this.state.recipes} />
+        <Recipes hits={this.state.hits} />
       </div>
     );
   }
