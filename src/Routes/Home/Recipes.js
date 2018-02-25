@@ -2,7 +2,7 @@ import React from 'react';
 import RecipeCard from './RecipeCard';
 
 const Recipes = ({ hits }) => {
-  const displayedRecipes = hits.map((hit: {}) => (
+  const recipeCards = hits.map((hit: {}) => (
     <RecipeCard key={Math.random()} recipe={hit.recipe} />
   ));
 
@@ -11,7 +11,7 @@ const Recipes = ({ hits }) => {
       <div className="title">
         <h2>Recipes</h2>
       </div>
-      <div className="results">{displayedRecipes}</div>
+      <div className="results">{recipeCards}</div>
     </div>
   );
 };

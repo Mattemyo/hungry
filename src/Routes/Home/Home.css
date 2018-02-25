@@ -93,8 +93,7 @@ div.ingredient-buttons {
   display: flex;
   justify-content: flex-end;
   flex-direction: row;
-  padding-right: 10%;
-  width: 90%;
+  width: 95%;
 }
 div.ingredient-buttons button {
   margin: 0 20px 15px;
@@ -127,7 +126,9 @@ div.results div.recipe-card {
   -webkit-box-shadow: 1px 1px 4px 2px #00000015;
   -moz-box-shadow: 1px 1px 4px 2px #00000015;
   box-shadow: 1px 1px 4px 2px #00000015;
-  border-radius: 1px 10px;
+  border-radius: 3px 15px;
+  opacity: 1;
+  animation: fadeIn 2s linear 1;
 }
 
 div.recipe-name h3 {
@@ -143,12 +144,26 @@ div.recipe-image img {
   width: 40%;
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  1% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 @media screen and (min-width: 800px) {
   div.search-terms {
     width: 60%;
   }
   div.ingredient-buttons {
-    width: 60%;
+    width: 82%;
   }
   div.results {
     width: 50%;

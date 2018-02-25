@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Averia+Serif+Libre');
+* {
+  font-family: 'Averia Serif Libre', sans-serif;
+}
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Averia Serif Libre', sans-serif;
 }
 
 .PageTransition-appear {

@@ -52,6 +52,7 @@ class Home extends Component {
   };
 
   getRecipes = () => {
+    this.setState({ hits: [] });
     axios
       .get(
         `https://api.edamam.com/search?q=${this.state.searchTerms.join(
