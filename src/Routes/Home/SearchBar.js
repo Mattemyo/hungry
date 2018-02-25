@@ -6,7 +6,7 @@ const SearchBar = ({ onInputChange, addSearchTerm, inputValue }) => {
       <div>
         <input
           value={inputValue}
-          placeholder="Pasta..."
+          placeholder="Sugar..."
           type="text"
           onChange={onInputChange}
           maxLength="15"

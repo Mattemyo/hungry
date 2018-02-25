@@ -1,9 +1,8 @@
-/* ============= SearchBar ========= */
 div.page {
   padding-bottom: 60px;
   background: #e97e72;
-
 }
+/* ============= SearchBar ========= */
 div.search-bar {
   background: #ff8c7f;
   display: flex;
@@ -28,6 +27,9 @@ div.search-bar button {
   border-radius: 4px 0 0 4px;
   border-radius: 0 2px 2px 0;
   cursor: pointer;
+}
+div.search-bar button:hover {
+  transform: scale(1.02);
 }
 
 /* ============= SearchTerms ============ */
