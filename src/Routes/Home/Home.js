@@ -17,6 +17,9 @@ class Home extends Component {
       hits: []
     };
   }
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
 
   onInputChange = e => {
     this.setState({ searchBoxInput: e.target.value });
@@ -51,7 +54,9 @@ class Home extends Component {
   getRecipes = () => {
     axios
       .get(
-        `https://api.edamam.com/search?q=chicken&app_id=${apiAppId}&app_key=${apiKey}`
+        `https://api.edamam.com/search?q=${this.state.searchTerms.join(
+          '%20'
+        )}&app_id=${apiAppId}&app_key=${apiKey}`
       )
       .then((response: {}) => {
         console.log(response.data.hits);

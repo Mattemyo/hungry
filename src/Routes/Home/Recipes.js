@@ -7,16 +7,16 @@ const Recipes = ({ hits }) => {
     ));
 
     return (
-      <div key={Math.random()}>
+      <div className="recipe-card" key={Math.random()}>
         <div key={Math.random()} className="recipe-name">
           <h3 key={Math.random()}>{hit.recipe.label}</h3>
         </div>
-        <div key={Math.random()}>
+        <div className="recipe-image" key={Math.random()}>
           <img
             key={Math.random()}
-            className="recipe-image"
             alt={hit.recipe.label}
             src={hit.recipe.image}
+            style={{ borderRadius: '5px' }}
           />
         </div>
         <div key={Math.random()} className="ingredients">

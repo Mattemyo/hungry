@@ -1,4 +1,7 @@
 /* ============= SearchBar ========= */
+div.page {
+  padding-bottom: 60px;
+}
 div.search-bar {
   background: #ff8c7f;
   display: flex;
@@ -39,7 +42,7 @@ div.search-terms {
   margin: 0 auto;
   padding: 10px;
   box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.466);
-  border-radius: 0 15px;
+  border-radius: 2px 15px;
 }
 
 div.term {
@@ -101,12 +104,40 @@ div.ingredient-buttons button {
   box-shadow: 2px 0px 2px 2px rgba(0, 0, 0, 0.055);
   background: hsl(6, 50%, 75%);
 }
+div.ingredient-buttons button {
+  cursor: pointer;
+}
 /* =========  Results =========== */
 div.results {
+  min-height: 300px;
+  margin-bottom: 20px;
   width: 80%;
   margin: 0 auto;
   background: hsl(42, 90%, 67%);
   padding: 10px;
   box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.466);
-  border-radius: 0 15px;
+  border-radius: 3px 15px;
+}
+
+div.results div.recipe-card {
+  background: #ff8c7f;
+  padding: 10px;
+  margin: 20px;
+  -webkit-box-shadow: 1px 1px 4px 2px #00000015;
+  -moz-box-shadow: 1px 1px 4px 2px #00000015;
+  box-shadow: 1px 1px 4px 2px #00000015;
+  border-radius: 1px 10px;
+}
+
+div.recipe-name h3 {
+  text-align: center;
+  margin: 20px auto;
+  width: 60%;
+}
+div.recipe-image {
+  justify-content: center;
+}
+div.recipe-image img {
+  margin: 20px 30%;
+  width: 40%;
 }
