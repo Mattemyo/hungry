@@ -1,35 +1,10 @@
 import React from 'react';
+import RecipeCard from './RecipeCard';
 
 const Recipes = ({ hits }) => {
-  const displayedRecipes = hits.map((hit: {}) => {
-    const ingredients = hit.recipe.ingredientLines.map(ingredient => (
-      <li key={Math.random()}>{ingredient}</li>
-    ));
-
-    return (
-      <div className="recipe-card" key={Math.random()}>
-        <div key={Math.random()} className="recipe-name">
-          <h3 key={Math.random()}>{hit.recipe.label}</h3>
-        </div>
-        <div className="recipe-image" key={Math.random()}>
-          <img
-            key={Math.random()}
-            alt={hit.recipe.label}
-            src={hit.recipe.image}
-            style={{ borderRadius: '5px' }}
-          />
-        </div>
-        <div key={Math.random()} className="ingredients">
-          <ul key={Math.random()}>{ingredients}</ul>
-        </div>
-        <div key={Math.random()}>
-          <a target="_blank" key={Math.random()} href={hit.recipe.url}>
-            See full recipe
-          </a>
-        </div>
-      </div>
-    );
-  });
+  const displayedRecipes = hits.map((hit: {}) => (
+    <RecipeCard key={Math.random()} recipe={hit.recipe} />
+  ));
 
   return (
     <div className="recipes">

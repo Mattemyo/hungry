@@ -59,8 +59,8 @@ class Home extends Component {
         )}&app_id=${apiAppId}&app_key=${apiKey}`
       )
       .then((response: {}) => {
-        console.log(response.data.hits);
         this.setState({ hits: response.data.hits });
+        console.log(this.state.hits);
       });
   };
 
