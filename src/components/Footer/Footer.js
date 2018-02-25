@@ -3,7 +3,7 @@ import React from 'react';
 import './Footer.css';
 
 export default () => (
-  <footer>
+  <div className="footer">
     <h3>footer</h3>
-  </footer>
+  </div>
 );
