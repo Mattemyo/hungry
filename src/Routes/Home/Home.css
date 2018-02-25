@@ -1,6 +1,8 @@
 /* ============= SearchBar ========= */
 div.page {
   padding-bottom: 60px;
+  background: #e97e72;
+
 }
 div.search-bar {
   background: #ff8c7f;
@@ -105,6 +107,10 @@ div.ingredient-buttons button {
   box-shadow: 2px 0px 2px 2px rgba(0, 0, 0, 0.055);
   background: hsl(6, 50%, 75%);
   cursor: pointer;
+  border-radius: 2px;
+}
+div.ingredient-buttons button:hover {
+  transform: scale(1.05);
 }
 /* =========  Results =========== */
 div.results {
@@ -121,7 +127,6 @@ div.results {
 div.results div.recipe-card {
   background: #ff8c7f;
   padding: 20px;
-  padding-left: 10%;
   margin: 20px;
   -webkit-box-shadow: 1px 1px 4px 2px #00000015;
   -moz-box-shadow: 1px 1px 4px 2px #00000015;
@@ -136,12 +141,11 @@ div.recipe-name h3 {
   margin: 20px auto;
   width: 60%;
 }
-div.recipe-image {
-  justify-content: center;
-}
+
 div.recipe-image img {
-  margin: 20px 30%;
-  width: 40%;
+  margin: 10px 45px;
+  width: 80%;
+  box-shadow: 2px 2px 2px black;
 }
 
 @keyframes fadeIn {

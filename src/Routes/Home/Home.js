@@ -8,14 +8,16 @@ import './Home.css';
 const apiKey = 'a4c96a92aa69348f8ced3c9141f42517';
 const apiAppId = 'db2831de';
 
+const getInitialState = () => ({
+  searchBoxInput: '',
+  searchTerms: [],
+  hits: [],
+  isLoading: false
+});
 class Home extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      searchBoxInput: '',
-      searchTerms: [],
-      hits: []
-    };
+    this.state = getInitialState();
   }
   componentDidMount() {
     window.scrollTo(0, 0);
@@ -43,7 +45,7 @@ class Home extends Component {
     });
   };
   removeAllSearchTerms = () => {
-    this.setState({ searchTerms: [] });
+    this.setState(getInitialState());
   };
   _handleKeyPress = e => {
     if (e.key === 'Enter') {
@@ -52,7 +54,7 @@ class Home extends Component {
   };
 
   getRecipes = () => {
-    this.setState({ hits: [] });
+    this.setState({ hits: [], isLoading: true });
     axios
       .get(
         `https://api.edamam.com/search?q=${this.state.searchTerms.join(
@@ -60,7 +62,7 @@ class Home extends Component {
         )}&app_id=${apiAppId}&app_key=${apiKey}`
       )
       .then((response: {}) => {
-        this.setState({ hits: response.data.hits });
+        this.setState({ hits: response.data.hits, isLoading: false });
         console.log(this.state.hits);
       });
   };
@@ -79,7 +81,7 @@ class Home extends Component {
           getRecipes={this.getRecipes}
           removeAllSearchTerms={this.removeAllSearchTerms}
         />
-        <Recipes hits={this.state.hits} />
+        <Recipes hits={this.state.hits} isLoading={this.state.isLoading} />
       </div>
     );
   }
